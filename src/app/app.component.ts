@@ -8,10 +8,10 @@ import {League} from './models/league';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'i-dont-like-football';
   leagues: League[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
     this.api.getLeagues().subscribe(

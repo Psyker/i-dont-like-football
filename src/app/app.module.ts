@@ -10,6 +10,15 @@ import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatFormFieldModule, MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +33,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
