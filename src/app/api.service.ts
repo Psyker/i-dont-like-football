@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiHost = 'http://localhost:8000/api';
+  private apiHost = 'http://127.0.0.1:8000/api';
   constructor(private http: HttpClient) { }
 
   getLeagues(): Observable<League[]> {

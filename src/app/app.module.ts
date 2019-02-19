@@ -9,7 +9,7 @@ import { LeagueComponent } from './league/league.component';
 import { TeamComponent } from './team/team.component';
 import { PlayerComponent } from './player/player.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

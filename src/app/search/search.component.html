@@ -1,3 +1,13 @@
-<p>
-  search works!
-</p>
+<div>
+  <label>
+    Search
+    <input type="text" [formControl]="search">
+  </label>
+</div>
+<button (click)="searchHandler()">Search</button>
+
+<div>
+  <p *ngFor="let league of leagues">
+    {{league.name}}
+  </p>
+</div>

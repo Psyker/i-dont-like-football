@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from './api.service';
+import {League} from './models/league';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,24 @@ import {ApiService} from './api.service';
 })
 export class AppComponent implements OnInit {
   title = 'i-dont-like-football';
+  leagues: League[] = [];
 
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    localStorage.setItem('LEAGUES', JSON.stringify(this.api.getLeagues()));
+    this.api.getLeagues().subscribe(
+      (data: League[]) => {
+        data.map((league: any) => {
+          const newLeague: League = {
+            id: league.idLeague,
+            name: league.strLeague,
+            nameAlt: league.strLeagueAlternate,
+            sport: league.strSport
+          };
+          this.leagues.push(newLeague);
+        });
+        localStorage.setItem('LEAGUES', JSON.stringify(this.leagues));
+      }
+    );
   }
 }
