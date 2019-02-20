@@ -1,4 +1,15 @@
-<mat-list-item >
-  <img matListAvatar src="{{(player.cutout) ? player.cutout : player.thumbnail}}" alt="{{player.name}}">
-  <h3 matLine> {{player.name}} </h3>
-</mat-list-item>
+<mat-card class="card-item">
+  <mat-card-header>
+    <mat-card-title>{{player.name}}</mat-card-title>
+    <mat-card-subtitle>{{player.position}}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="card-item-image-container">
+    <img mat-card-image
+         src="{{playerImage}}"
+         alt="{{player.name}}">
+  </div>
+  <mat-card-content>
+    <p><b>Birth place:</b> {{player.birthplace ? player.birthplace : 'N/A'}}</p>
+    <p><b>Signing amount:</b> {{player.signingAmount ? player.signingAmount : 'N/A'}}</p>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,19 @@
+.card-item {
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 350px;
+  margin-bottom: 20px;
+  .card-item-image-container {
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    margin-bottom: 10px;
+    img {
+      margin-top: 0;
+      background-color: whitesmoke;
+      max-height: 200px;
+      max-width: 200px;
+    }
+  }
+}

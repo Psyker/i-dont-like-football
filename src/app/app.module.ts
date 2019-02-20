@@ -6,10 +6,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
-  MatButtonModule,
-  MatFormFieldModule, MatIconModule,
-  MatInputModule,
-  MatListModule, MatMenuModule,
+  MatButtonModule, MatCardModule,
+  MatFormFieldModule, MatInputModule,
   MatProgressSpinnerModule
 } from '@angular/material';
 
@@ -35,10 +33,8 @@ import { PlayerComponent } from './player/player.component';
     MatInputModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatListModule,
     MatButtonModule,
-    MatIconModule,
-    MatMenuModule
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

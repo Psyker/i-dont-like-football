@@ -1,5 +1,5 @@
-<div>
-  <mat-form-field class="example-full-width">
+<div class="search-form-container">
+  <mat-form-field class="search-form-large">
     <input type="text" placeholder="Search for a league" aria-label="League" matInput [formControl]="search"
            [matAutocomplete]="auto">
     <mat-autocomplete #auto="matAutocomplete">
@@ -8,20 +8,18 @@
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-  <button (click)="searchHandler()" mat-raised-button>Search</button>
+  <button [disabled]="search.value.length == 0" (click)="searchHandler()" >Search</button>
 </div>
 
-<div class="item-container">
-  <mat-list>
-    <div *ngIf="loading">
-      <mat-spinner></mat-spinner>
-    </div>
-    <mat-list-item *ngFor="let team of teams">
-      <img matListAvatar src="{{team.badge}}" alt="{{team.name}}">
-      <h3 matLine> {{team.name}} </h3>
-      <a matLine routerLink="/teams/{{team.id}}/players">See</a>
-    </mat-list-item>
-  </mat-list>
+<div class="search-results-container">
+  <div *ngIf="loading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div class="results-list">
+    <a routerLink="/teams/{{team.id}}/players" class="result-item" *ngFor="let team of teams">
+      <img  src="{{team.badge}}" alt="{{team.name}}">
+    </a>
+  </div>
 </div>
 
 

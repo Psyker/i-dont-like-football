@@ -1,0 +1,36 @@
+.search-form-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.3);
+  padding: 10px;
+  .search-form-large {
+    width: 65%;
+  }
+  button {
+    border: none;
+    background-color: white;
+  }
+}
+
+.search-results-container {
+  padding: 15px;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  .ng-star-inserted {
+    margin: 0 auto;
+  }
+  .results-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    .result-item {
+      img {
+        height: 200px;
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -8,9 +8,17 @@ import {Player} from '../models/player';
 })
 export class PlayerComponent implements OnInit {
   @Input() player: Player;
+  playerImage: string;
+
   constructor() { }
 
   ngOnInit() {
+    if (this.player.cutout) {
+      this.playerImage = this.player.cutout;
+    } else if (this.player.thumbnail) {
+      this.playerImage = this.player.thumbnail;
+    } else {
+      this.playerImage = 'https://via.placeholder.com/150';
+    }
   }
-
 }
