@@ -20,8 +20,7 @@ export class TeamComponent implements OnInit {
     this.apiService.getTeamPlayers(id).then(
       players => {
         this.players = players;
-        this.loading = !this.loading;
       }
-    );
+    ).finally(() => this.loading = !this.loading);
   }
 }

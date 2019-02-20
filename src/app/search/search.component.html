@@ -15,9 +15,10 @@
   <div *ngIf="loading">
     <mat-spinner></mat-spinner>
   </div>
+  <div *ngIf="!loading && teams.length === 0">No Results</div>
   <div class="results-list">
     <a routerLink="/teams/{{team.id}}/players" class="result-item" *ngFor="let team of teams">
-      <img  src="{{team.badge}}" alt="{{team.name}}">
+      <img src="{{team.badge}}" alt="{{team.name}}">
     </a>
   </div>
 </div>

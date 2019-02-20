@@ -9,24 +9,12 @@ import {League} from './models/league';
 })
 export class AppComponent implements OnInit {
   leagues: League[] = [];
-
-  constructor(private api: ApiService) {
-  }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.api.getLeagues().subscribe(
-      (data: League[]) => {
-        data.map((league: any) => {
-          const newLeague: League = {
-            id: league.idLeague,
-            name: league.strLeague,
-            nameAlt: league.strLeagueAlternate,
-            sport: league.strSport
-          };
-          this.leagues.push(newLeague);
-        });
-        localStorage.setItem('LEAGUES', JSON.stringify(this.leagues));
-      }
-    );
+    this.apiService.getLeagues().then(leagues => {
+      this.leagues = leagues;
+      localStorage.setItem('LEAGUES', JSON.stringify(this.leagues));
+    });
   }
 }

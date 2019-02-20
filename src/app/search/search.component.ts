@@ -39,15 +39,9 @@ export class SearchComponent implements OnInit {
   searchHandler(): void {
     this.loading = true;
     this.teams = [];
-    this.apiService.getLeagueTeams(this.search.value)
-      .subscribe((data: Team[]) => data.map((team: any) => {
-        const newTeam: Team = {
-          id: team.idTeam,
-          name: team.strTeam,
-          badge: team.strTeamBadge,
-        };
-        this.teams.push(newTeam);
-        this.loading = false;
-      }));
+    this.apiService.getLeagueTeams(this.search.value).then((teams) => {
+        this.teams = teams;
+      }
+    ).finally(() => this.loading = !this.loading);
   }
 }
